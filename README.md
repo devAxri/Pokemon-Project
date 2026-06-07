@@ -20,3 +20,10 @@
     <img src="github/db_structure.png" alt="Database structure diagram" width="800"/>
   </a>
 </p>
+
+## 🐳 Docker
+
+```bash
+docker build -t pokemon-app .
+docker run -p 80:<port> pokemon-app
+```
