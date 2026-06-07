@@ -1,0 +1,40 @@
+<script src="./js/navhandler.js" defer></script>
+<header>
+    <nav>
+        <a class="logo" href="/home"><img src="./assets/logo.png" alt="hier komt logo te staan"></a>
+        <section class="dropdownMenu">
+
+            <button class="menubutton" id="menubutton">
+                <section class="menubutton2">
+                    <section class="menubutton3"></section>
+                    <section class="menubutton3"></section>
+                    <section class="menubutton3"></section>
+                </section>
+            </button>
+
+            <section class="dropdowncontent">
+                <a class="menulink" href="home">Home</a>
+                <a class="menulink" href="pokedex">Alle Pokémon</a>
+                <a class="menulink" href="view">Eigen Pokémon</a>
+                <a class="menulink" href="compare">Vergelijken</a>
+                <a class="menulink" href="catch">Vangen</a>
+                <a class="menulink" href="battler">Vechten</a>
+                <a class="menulink" href="whosthatpokemon">Who's that Pokémon!</a>
+                <a class="menulink" href="/">Landingpagina</a>
+            </section>
+        </section>
+
+        <form class="searchform" onsubmit="preventdefault();">
+            <section class="autocomplete">
+                <input id="searchgameinput" type="text" placeholder="een spel zoeken..." name="searchgameinput">
+            </section>
+            <section id="autocomplete-container-game" class="autocomplete-container"></section>
+
+        </form>
+        <section class="accountandsoundbutton">
+            <button class="accountuserbutton"><a href="accountuser"><img src="./assets/images/useraccountimg.png"
+                        alt=""></a></button>
+            <button id="soundbutton"><img id="soundbuttonimg" src="./assets/icon/soundbuttonon.png" alt=""></button>
+        </section>
+    </nav>
+</header>

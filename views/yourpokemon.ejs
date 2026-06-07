@@ -1,0 +1,38 @@
+<script src="./js/yourpokemon.js" defer></script>
+<script src="./js/toggleyourpokemon.js" defer></script>
+<!-- <script src="./js/ypautocompleteform.js" defer></script> -->
+
+<section class="yourpokemon" id="yourpokemon">
+    <form class="searchpokemonform" onsubmit="preventdefault();">
+        <section class="autocomplete">
+            <label for="inputpokemonyourpokemon">Jouw Pokémon:</label>
+            <input id="inputpokemonyourpokemon" type="text" name="inputpokemonyourpokemon" placeholder="zoeken...">
+        </section>
+        <section id="autocomplete-container-yp" class="autocomplete-container"></section>
+    </form>
+
+    <section class="yourpokemontitle">
+        <p class="yourpokemonname" id="yourpokemonname"></p>
+    </section>
+
+    <img id="yourpokemonimage" src="assets/loading.gif" alt="image of Pokémon">
+
+    <section class="yourpokemonstats">
+        <section class="yourpokemonstatstitle">
+            <img class="health" src="assets/icon/health.png"></img>
+            <img class="attack" src="assets/icon/attackicon2.png"></img>
+            <img class="defence" src="assets/icon/defenseicon4.png"></img>
+        </section>
+        <section class="yourpokemonstatspoints">
+            <section>
+                <p class="yourpokemonhealth" id="yourpokemonhealth"></p>
+            </section>
+            <section>
+                <p class="yourpokemonattack" id="yourpokemonattack"></p>
+            </section>
+            <section>
+                <p class="yourpokemondefence" id="yourpokemondefence"></p>
+            </section>
+        </section>
+    </section>
+</section>

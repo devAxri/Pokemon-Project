@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Minigame to find the Pokémon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Who's That Pokémon! - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/wtpgetpokemonbyinput.js" defer></script>
+    <script src="./js/wtpgetrandompokemon.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="wtpmain">
+
+            <section class="displayFlex">
+                <section class="wtpsilhouette">
+                    <h1 id="wtpheader">Who's That Pokemon?</h1>
+
+                    <img id="wtpimage" src="/assets/loading.gif" draggable="false"
+                        alt="image van silhouette van een Pokémon">
+
+                    <form class="searchpokemonform" onsubmit="event.preventDefault();">
+                        <section class="autocomplete">
+                            <input id="inputwtp" type="text" placeholder="zoeken..." name="answernamepokemon"
+                                required />
+                        </section>
+                        <section id="autocomplete-container-wtp" class="autocomplete-container"></section>
+
+                        <button id="submitwtpbutton" type="button">raad!</button>
+                        <button class="refreshbutton" type="button"><img src="assets/icon/refreshicon.png"></button>
+                    </form>
+                    <p style="display: none;">antwoord:</p>
+                    <p style="display: none;" id="wtpname"></p>
+                </section>
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src=""
+                            alt="toggle yourpokemon button"></section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

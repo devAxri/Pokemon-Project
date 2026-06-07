@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Information about the current Pokémon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Bekijken - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+    <script src="./js/viewpokemon.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="viewpokemonmain">
+            <section class="displayFlex">
+                <section class="main">
+                    <h1>Pokémon bekijken</h1>
+                    <section class="arrowscontainer">
+                        <a id="vpbackbutton" href=""> &larr;</a>
+                        <h2 id="vptitle"></h2>
+                        <a id="vpnextbutton" href="">&rarr;</a>
+                    </section>
+
+                    <p class="hiddenP" id="hiddenP"></p>
+
+                    <section class="viewpokemon">
+                        <img id="vpimage" src="/assets/loading.gif" style="height: 300px; width: 300px"
+                            alt="imagepokemon">
+                        <section class="viewpokemonallinfo">
+                            <section class="infoandstats">
+                                <section class="infopokemon">
+                                    <h3>Informatie</h3>
+                                    <section>
+                                        <p>id:</p>
+                                        <p id="vpnumber"></p>
+                                    </section>
+                                    <section>
+                                        <p>naam:</p>
+                                        <p id="vpname"></p>
+                                    </section>
+
+                                    <section>
+                                        <p>type:</p>
+                                        <p id="vptype"></p>
+                                    </section>
+                                    <section>
+                                        <p>datum gevangen:</p>
+                                        <p id="vpdate"></p>
+                                    </section>
+                                    <section class="vpmovessection">
+                                        <p>aanvallen:</p>
+                                        <ol id="vpmoves"></ol>
+                                    </section>
+                                </section>
+
+                                <section class="statspokemon">
+                                    <h3>Statistieken</h3>
+                                    <section>
+                                        <img src="assets/icon/health.png"
+                                            style="width: 30px; height: 30px; padding: 5px; ">
+                                        <p id="vphealth"></p>
+                                    </section>
+                                    <section>
+                                        <img src="assets/icon/attackicon2.png"
+                                            style="width: 30px; height: 30px; padding: 5px; ">
+                                        <p id="vpattack"></p>
+                                    </section>
+                                    <section>
+                                        <img src="assets/icon/defenseicon4.png"
+                                            style="width: 30px; height: 30px; padding: 5px; ">
+
+                                        <p id="vpdefence"></p>
+                                    </section>
+
+                                    <section>
+                                        <p>aantal gewonnen:</p>
+                                        <section class="addremovewinloss">
+                                            <button id="removewinbutton">-
+                                            </button>
+                                            <p id="vpamountwin"></p>
+
+                                            <button id="addwinbutton">+
+                                            </button>
+                                        </section>
+                                    </section>
+                                    <section>
+                                        <p>aantal verloren:</p>
+                                        <section class="addremovewinloss">
+                                            <button id="removelossbutton">-
+                                            </button>
+                                            <p id="vpamountloss"></p>
+                                            <button id="addlossbutton">+
+                                            </button>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+
+                            <section class="viewpokemonbuttons">
+                                <button id="addpokemonbutton">Pokémon als buddy</button>
+                                <button id="releasebutton">Pokémon vrijlaten</button>
+                            </section>
+                        </section>
+
+
+                    </section>
+
+                    <h2 id="evolutionline">Evolutielijn</h2>
+                    <section id="evolutionsection">
+
+                    </section>
+                </section>
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src=""
+                            alt="toggle yourpokemon button"></section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

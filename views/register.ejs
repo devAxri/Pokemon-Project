@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Registerpage">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - E-Services</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="/js/register.js" defer></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/"><img src="./assets/logo.png" alt="hier komt logo te staan"></a>
+        </nav>
+    </header>
+    <main class="registermain">
+        <section class="registerForm">
+            <section class="registerFormInside">
+                <form id="actualRegisterForm">
+                    <h1>Registreren</h1>
+                    <section>
+                        <label for="html">e-mail</label>
+                        <input id="email" required />
+                    </section>
+                    <section>
+                        <label for="html">wachtwoord</label>
+                        <input type="password" id="password" required />
+                    </section>
+                    <section>
+                        <label for="html">wachtwoord herhalen</label>
+                        <input type="password" id="passwordRepeat" required />
+                    </section>
+
+                    <div class="h-captcha" data-sitekey="30000000-ffff-ffff-ffff-000000000003"></div>
+                    <input type="hidden" id="h-captcha-response">
+                    <button class="mainLogin" type="submit" id="registerButton">Registreer</button>
+                    <section class="noaccountsection">
+                        <h2>Heeft u al een account?</h2>
+                        <a href="login">Login</a>
+                    </section>
+                    <h3 id="errorField"></h3>
+                </form>
+            </section>
+        </section>
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+
+</html>

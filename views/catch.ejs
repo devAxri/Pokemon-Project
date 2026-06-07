@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Minigame catch the Pokémon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Vangen - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+    <script src="./js/catch.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="catchmain">
+            <section class="displayFlex">
+                <section class="main">
+                    <h1>Vang deze Pokémon!</h1>
+                    <section class="catchpokemonsection">
+                        <p class="hiddenP" id="hiddenP"></p>
+                        <p class="catchpokemonname" id="catchpokemonname">Loading...</p>
+
+                        <img id="catchpokemonimage" src="./assets/loading.gif" width="250" height="250">
+
+                        <section class="catchpokemonbuttons">
+                            <button type="button" id="catchpokemonbutton"><img src="assets/logo.png"
+                                    alt="pokebal"></button>
+                            <button class="refreshbutton" type="button" onclick="window.location.reload();"><img
+                                    src="assets/icon/refreshicon.png"></button>
+                        </section>
+
+                        <section class="catchpokemoninfo">
+                            <p><span id="catchrate"></span> % vangkans</p>
+                            <p id="catchchancestext"><span id="catchchances">3</span> kansen</p>
+                        </section>
+
+                        <section>
+                            <button id="releasepokemonbutton">Pokémon vrijlaten</button>
+                        </section>
+                    </section>
+                </section>
+
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src=""
+                            alt="toggle yourpokemon button"></section>
+
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+
+</body>
+
+</html>

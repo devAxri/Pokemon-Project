@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="data and more information about the user">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Accountuser - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/accountuser.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+    <script src="./js/musichandler.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="accountusermain">
+            <section class="displayFlex">
+                <section class="main">
+                    <h1>Account</h1>
+                    <section class="accountUserContainer">
+                        <section class="accountUserLeft" id="accountUserLeft">
+                            <section class="accountUserLeftProfile">
+                                <img id="profilePic" src="assets/loading.gif" width="150px">
+                            </section>
+                            <ul>
+                                <li id="accountUserButton1">Persoonlijke gegevens</li>
+                                <li id="accountUserButton2">Statistieken</li>
+                                <li id="accountUserButton3">Beveiliging</li>
+                                <li id="accountUserButton4">Prestaties</li>
+                                <li id="accountUserButton5">Log uit</li>
+                            </ul>
+                        </section>
+                        <section class="accountuserrightall">
+                            <section id="accountUserRight1" class="accountUserRight">
+                                <section class="titlesection">
+                                    <button class="menubutton" id="titlesectionbutton1">
+                                        <section class="menubutton2">
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                        </section>
+                                    </button>
+                                    <h2>Persoonlijke gegevens</h2>
+                                </section>
+                                <section>
+                                    <label for="Gebruikersnaam">gebruikersnaam</label>
+                                    <input id="Gebruikersnaam" required />
+                                </section>
+
+                                <section>
+                                    <label for="email">e-mail</label>
+                                    <input id="email" required />
+                                </section>
+
+                                <button class="submitpersonalinfo" id="submitpersonalinfo" type="submit">wijzigingen
+                                    opslaan</button>
+
+                                <h3 id="errorField">
+                                    <%= infoField %>
+                                </h3>
+
+                            </section>
+
+                            <section id="accountUserRight2" class="accountUserRight">
+
+                                <section class="titlesection">
+                                    <button class="menubutton" id="titlesectionbutton2">
+                                        <section class="menubutton2">
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                        </section>
+                                    </button>
+                                    <h2>Statistieken</h2>
+                                </section>
+                                <section>
+                                    <p>Aantal Pokémon gevangen:
+                                    <p id="amountpokemoncaught"></p>
+                                    </p>
+                                </section>
+
+                                <section>
+                                    <p>Jouw Buddy:
+                                    <p id="buddyname"></p>
+                                    </p>
+                                </section>
+
+                                <section>
+                                    <p>Aantal keren gevochten:
+                                    <p id="amountbattlesfought"></p>
+                                    </p>
+                                </section>
+
+                                <section>
+                                    <p>Aantal keren gewonnen:
+                                    <p id="amountbattleswon"></p>
+                                    </p>
+                                </section>
+                                <section>
+                                    <p>Aantal keren verloren:
+                                    <p id="amountbattleslost"></p>
+                                    </p>
+                                </section>
+
+                            </section>
+
+                            <section id="accountUserRight3" class="accountUserRight">
+
+                                <section class="titlesection">
+                                    <button class="menubutton" id="titlesectionbutton3">
+                                        <section class="menubutton2">
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                        </section>
+                                    </button>
+                                    <h2>Beveiliging</h2>
+                                </section>
+                                <section>
+                                    <label for="Wachtwoord">mijn wachtwoord</label>
+                                    <input id="currentPassword" type="password" required />
+                                </section>
+                                <section>
+                                    <label for="Wachtwoord veranderen">wachtwoord veranderen</label>
+                                    <input id="newPassword" type="password" required />
+                                </section>
+
+                                <section>
+                                    <label for="Herhaal wachtwoord">herhaal wachtwoord</label>
+                                    <input id="repeatPassword" type="password" required />
+                                </section>
+
+                                <button id="changepasswordbutton" class="changepasswordbutton"><a href="#">wachtwoord
+                                        veranderen</a></button>
+                            </section>
+
+                            <section id="accountUserRight4" class="accountUserRight">
+
+                                <section class="titlesection">
+                                    <button class="menubutton" id="titlesectionbutton4">
+                                        <section class="menubutton2">
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                            <section class="menubutton3"></section>
+                                        </section>
+                                    </button>
+                                    <h2>Prestaties</h2>
+                                </section>
+                                <section class="datesection">
+                                    <p>Actief sinds: </p>
+                                    <p id="datestart"></p>
+                                </section>
+                                <p>Mijn badges:</p>
+                                <section class="allBadges" id="allBadges">
+
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src=""
+                            alt="toggle yourpokemon button"></section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

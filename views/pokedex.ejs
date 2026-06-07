@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="List of all Pokemon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pokedex - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/pokedex.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="pokedexmain">
+            <section class="displayFlex">
+                <section class="main">
+                    <h1>Pokédex</h1>
+                    <section id="filterpokemonsection" class="filterpokemon">
+                        <form onsubmit="return false">
+                            <input type="checkbox" id="viewAll" name="viewAll" value="Alle Pokemon Zien" checked=true />
+                            <label for="viewAll">alle Pokémon zien</label>
+                            &nbsp;
+                            &nbsp;
+                            <label for="generation">generatie:</label>
+                            <select class="selectgeneration" name="selectgeneration" id="selectgeneration" required>
+                                <option value="*">*</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </form>
+                        <form class="searchpokemonform" onsubmit="return false">
+                            <section class="autocomplete">
+                                <label for="inputpokemonpokedex">Pokémon: </label>
+                                <input id="inputpokemonpokedex" type="text" name="inputpokemonpokedex"
+                                    placeholder="zoeken...">
+                            </section>
+                        </form>
+                    </section>
+
+                    <section class="allpokemon">
+                    </section>
+
+                    <!-- <section class="buttonspage">
+                        <button class="previouspage" id="previouspage">Vorige pagina</button>
+                        <button class="nextpage" id="nextpage">Volgende pagina</button>
+                    </section> -->
+                </section>
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src=""
+                            alt="toggle yourpokemon button"></section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

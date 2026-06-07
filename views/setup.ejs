@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="List of all Pokémon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Setup - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/setup.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="setupmain">
+            <section class="setupForm">
+                <h1>Setup</h1>
+                <section class="setupFormInside">
+                    <form id="actualSetupForm">
+                        <label for="usernameLabel">Gebruikersnaam</label>
+                        <input id="username" required />
+                        <section class="startersandprofilepicsection">
+                            <section class="starterspokemonsection">
+                                <label for="selecStartPokemon">Starters Pokémon</label>
+                                <select class="selecStartPokemon" id="selecStartPokemon" required>
+                                    <option value="bulbasaur">Bulbasaur</option>
+                                    <option value="charmander">Charmander</option>
+                                    <option value="squirtle">Squirtle</option>
+                                    <option value="chikorita">Chikorita</option>
+                                    <option value="cyndaquil">Cyndaquil</option>
+                                    <option value="totodile">Totodile</option>
+                                    <option value="treecko">Treecko</option>
+                                    <option value="torchic">Torchic</option>
+                                    <option value="rowlet">Rowlet</option>
+                                </select>
+                                <img id="startersPokemonPreview"
+                                    src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png"
+                                    alt="">
+                            </section>
+
+                            <section class="profilepicsection">
+                                <label for="html">Profielfoto</label>
+                                <select class="selectProfilePic" id="selectProfilePic" required>
+                                    <option value="pikachu">Pikachu</option>
+                                    <option value="venusaur">Venusaur</option>
+                                    <option value="charizard">Charizard</option>
+                                    <option value="mewtwo">Mewtwo</option>
+                                    <option value="eevee">Eevee</option>
+                                </select>
+                                <img id="profilePicturPreview"
+                                    src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"
+                                    alt="">
+                            </section>
+                        </section>
+                        <button class="mainLogin" type="submit" id="registerButton">Start Spel</button>
+                        <p id="errorField"></p>
+                    </form>
+                </section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

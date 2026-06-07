@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Page where user can login">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - E-Services</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="/js/login.js" defer></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/"><img src="./assets/logo.png" alt="hier komt logo te staan"></a>
+        </nav>
+    </header>
+    <main class="loginmain">
+        <section class="loginformsection">
+            <form id="loginform">
+                <h1>Inloggen</h1>
+                <section class="inputsection">
+                    <label for="html">e-mail</label>
+                    <input id="email" required />
+                </section>
+
+                <section class="inputsection">
+                    <label for="html">wachtwoord</label>
+                    <input type="password" id="password" required />
+                </section>
+
+                <p><a href="reset.html">wachtwoord vergeten</a></p>
+
+                <div class="h-captcha" data-sitekey="30000000-ffff-ffff-ffff-000000000003"></div>
+                <button class="mainLogin" type="submit" id="loginButton">login</button>
+                <section class="noaccountsection">
+                    <h2>Nog geen account?</h2>
+                    <a id="registerlink" href="register">registreer hier</a>
+                </section>
+
+
+                <p id="errorField"></p>
+            </form>
+        </section>
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+
+</html>

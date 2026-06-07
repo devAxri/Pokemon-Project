@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Compare two Pokémon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Vergelijken - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+    <script src="./js/comparegetpokemon.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <main class="comparemain">
+            <section class="displayFlex">
+                <section class="main">
+                    <h1>Pokémon vergelijken</h1>
+                    <section class="compareContainer">
+                        <section class="comparepokemon">
+                            <section class="comparepokemon1">
+                                <section class="chooseapokemon1">
+                                    <form class="searchpokemonform" onsubmit="event.preventDefault();">
+                                        <section class="autocomplete">
+                                            <label for="inputcompare1">Pokémon</label>
+                                            <input id="inputcompare1" type="text" name="inputcompare1"
+                                                placeholder="zoeken...">
+                                        </section>
+                                        <section id="autocomplete-container-compare1" class="autocomplete-container">
+                                        </section>
+                                    </form>
+                                </section>
+                                <h2 id="comparename1">Geef een pokemon in</h2>
+                                <img class="comparepokemonimage" id="compareimage1">
+                                <section class="compareinfo">
+                                    <section class="comparestats">
+                                        <section class="comparestatstitle">
+                                            <img class="comparehealth" src="assets/icon/health.png"
+                                                style="height: 30px; width: 30px;" alt="">
+                                            <img class="compareattack" src="assets/icon/attackicon2.png"
+                                                style="height: 30px; width: 30px;" alt="">
+                                            <img class="comparedefence" src="assets/icon/defenseicon4.png"
+                                                style="height: 30px; width: 30px;" alt="">
+                                        </section>
+
+                                        <section class="comparestatspoints">
+                                            <section class="comparehealthvalue">
+                                                <p id="comparehealthvalue1"></p>
+                                                <p id="comparehealthdifference1"></p>
+                                            </section>
+
+                                            <section class="compareattackhvalue">
+                                                <p id="compareattackvalue1"></p>
+                                                <p id="compareattackdifference1"></p>
+                                            </section>
+
+                                            <section class="comparedefencevalue">
+                                                <p id="comparedefencevalue1"></p>
+                                                <p id="comparedefencedifference1"></p>
+                                            </section>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="comparepokemon2">
+                                <section class="chooseapokemon2">
+                                    <form class="searchpokemonform" onsubmit="event.preventDefault();">
+                                        <section class="autocomplete">
+                                            <label for="inputcompare2">Pokémon</label>
+                                            <input id="inputcompare2" type="text" name="inputcompare2"
+                                                placeholder="zoeken...">
+                                        </section>
+                                        <section id="autocomplete-container-compare2" class="autocomplete-container">
+                                        </section>
+
+                                    </form>
+                                </section>
+                                <h2 id="comparename2">Geef een Pokémon in</h2>
+                                <img class="comparepokemonimage" id="compareimage2">
+                                <section class="compareinfo">
+                                    <section class="comparestats">
+                                        <section class="comparestatstitle">
+                                            <img class="comparehealth" src="assets/icon/health.png"
+                                                style="height: 30px; width: 30px;" alt="">
+                                            <img class="compareattack" src="assets/icon/attackicon2.png"
+                                                style="height: 30px; width: 30px;" alt="">
+                                            <img class="comparedefence" src="assets/icon/defenseicon4.png"
+                                                style="height: 30px; width: 30px;" alt="">
+                                        </section>
+
+                                        <section class="comparestatspoints">
+                                            <section class="comparehealthvalue">
+                                                <p id="comparehealthvalue2"></p>
+                                                <p id="comparehealthdifference2"></p>
+                                            </section>
+
+                                            <section class="compareattackhvalue">
+                                                <p id="compareattackvalue2"></p>
+                                                <p id="compareattackdifference2"></p>
+                                            </section>
+
+                                            <section class="comparedefencevalue">
+                                                <p id="comparedefencevalue2"></p>
+                                                <p id="comparedefencedifference2"></p>
+                                            </section>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src=""
+                            alt="toggle yourpokemon button"></section>
+
+            </section>
+
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

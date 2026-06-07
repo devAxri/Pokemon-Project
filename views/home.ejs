@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Menu page to select different options">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Homepagina - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/fullscreenhandler.js" defer></script>
+</head>
+
+<body>
+
+    <%- include('header.ejs') %>
+
+        <main class="homemain">
+            <section class="displayFlex">
+                <section class="main">
+                    <h1>Welkom bij Pokémon!</h1>
+                    <section class="taskscontainer">
+                        <section class="viewtasks">
+                            <h2>Pokémon bekijken</h2>
+                            <section class="viewtasksbuttons">
+                                <a class="pokedexbutton" href="pokedex">
+                                    <p>Alle Pokémon</p>
+                                </a>
+                                <a class="viewbutton" href="view">
+                                    <p>Eigen Pokémon</p>
+                                </a>
+                            </section>
+                        </section>
+
+                        <section class="gametasks">
+                            <h2>Minigames</h2>
+                            <section class="gametasksbuttons">
+                                <a class="battlerbutton" href="battler">
+                                    <p>Battler</p>
+                                </a>
+                                <a class="catchbutton" href="catch">
+                                    <p>Vangen</p>
+                                </a>
+                            </section>
+                        </section>
+
+                        <section class="extratasks">
+                            <h2>Extra</h2>
+                            <section class="extratasksbuttons">
+                                <a class="comparebutton" href="compare">
+                                    <p>Vergelijken</p>
+                                </a>
+                                <a class="wtpbutton" href="whosthatpokemon">
+                                    <p>Who's that Pokemon?</p>
+                                </a>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <%- include('yourpokemon.ejs') %>
+                    <section class="toggle-sidebar-button" onclick="toggleSidebar()"><img src="">
+                    </section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

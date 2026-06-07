@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Minigame battler user vs AI">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Battler - E-Services</title>
+    <script src="./js/musichandler.js" defer></script>
+    <script src="./js/battlerautocompleteform.js" defer></script>
+    <script src="./js/battlergetui.js" defer></script>
+    <script src="./js/battle.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/fullscreenhandler.js" defer></script>
+</head>
+
+<body>
+    <%- include('header.ejs') %>
+        <section id="grass-container">
+            <section id="grass"></section>
+        </section>
+        <main class="battlermain">
+            <p class="hiddenP" id="hiddenP"></p>
+            <section class="activepokemoncontainer">
+                <section class="pokemondisplayimage">
+                    <section class="innerpokemondisplay">
+                        <section class="searchandinfo">
+                            <section class="battlersearchpokemonform" id="battlersearchpokemonformuser">
+                                <form onSubmit=event.preventDefault();>
+                                    <section class="autocomplete">
+                                        <label for="inputpokemonbattleruser">Jouw Pokémon</label>
+                                        <input id="inputpokemonbattleruser" type="text" name="inputpokemonbattleruser"
+                                            placeholder="zoeken...">
+                                    </section>
+                                    <section id="autocomplete-container-user" class="autocomplete-container"></section>
+                                </form>
+                            </section>
+
+                            <section class="battlerinfouser" id="battlerinfouser">
+                                <section>
+                                    <section>
+                                        <p id="battleridpokemonuser"></p>
+                                        <p class="battlernamepokemonuser" id="battlernamepokemonuser"></p>
+                                    </section>
+
+                                    <section>
+                                        <ul class="battlertypelistuser">
+                                            <li><img class="typeicons" id="typeicon1user">
+                                            </li>
+                                            <li><img class="typeicons" id="typeicon2user">
+                                            </li>
+                                        </ul>
+                                    </section>
+
+                                    <section>
+                                        <section>
+                                            <img class="battlerattackimg" src="./assets/icon/attackicon2.png"
+                                                style="height: 30px; width: 30px; margin: 0;">
+                                            <p class="battlerattackpokemonuser" id="battlerattackpokemonuser"></p>
+                                        </section>
+
+                                        <section>
+                                            <img class="battlerdefenseimg" src="./assets/icon/defenseicon4.png"
+                                                style="height: 30px; width: 30px; margin: 0; background: none;">
+                                            <p class="battlerdefensepokemonuser" id="battlerdefensepokemonuser"></p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+
+                        <!-- <section id="imagesuser" class="imagesuser">
+                            <img id="battlerdisplayuser" src="/assets/loading.gif" preload>
+                        </section> -->
+                        <section id="imagesuser" class="imagesuser">
+                            <img id="innerpokemondisplayuser" src="/assets/loading.gif" preload>
+                        </section>
+                        <section class="healthandmoves">
+                            <section class="healthcontainer">
+
+                                <section class="healthbar">
+                                    <p class="healthbaruser"></p>
+                                </section>
+                                <section class="currenthealthsection">
+                                    <img src="./assets/icon/health.png" style="height: 30px; width: 30px; margin: 0;">
+                                    <p class="currenthealthuser" id="currenthealthuser"></p>/<p class="maxhealthuser"
+                                        id="maxhealthuser"></p>
+                                </section>
+                            </section>
+
+                            <section class="battlermoves" id="battlermovesuser">
+                                <span id="battlermoveslabeluser" class="battlermoveslabel">Het is jouw beurt. Kies een
+                                    aanval</span>
+                                <section id="battlermovescontainer">
+                                    <ul class="battlermoveslistuser" id="battlermoveslistuser">
+                                        <li class="battlermove1user" id="battlermove1user"></li>
+                                        <li class="battlermove2user" id="battlermove2user"></li>
+                                        <li class="battlermove3user" id="battlermove3user"></li>
+                                        <li class="battlermove4user" id="battlermove4user"></li>
+                                    </ul>
+                                </section>
+
+                                <section class="battlermovesinfo" id="battlermovesinfouser">
+                                    <section class="battlermoveinfo1" id="battlermoveinfo1user">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype1user" id="battlermovetype1user"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove1ppuser"></p>/<p id="battlermove1totalppuser"></p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove1poweruser" id="battlermove1poweruser"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+
+                                    <section class="battlermoveinfo2">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype2user"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove2ppuser"></p>/<p id="battlermove2totalppuser"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove2poweruser"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+
+                                    <section class="battlermoveinfo3">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype3user"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove3ppuser"></p>/<p id="battlermove3totalppuser"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove3poweruser"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+
+                                    <section class="battlermoveinfo4">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype4user"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove4ppuser"></p>/<p id="battlermove4totalppuser"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove4poweruser"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section class="pokemondisplayimage">
+                    <section class="innerpokemondisplay">
+                        <section class="searchandinfo">
+                            <section class="battlersearchpokemonform" id="battlersearchpokemonformai">
+                                <form onSubmit=event.preventDefault();>
+                                    <section class="autocomplete">
+                                        <label for="inputpokemonbattlerai">Vijand Pokémon</label>
+                                        <input id="inputpokemonbattlerai" type="text" name="inputpokemonbattlerai"
+                                            placeholder="zoeken...">
+                                    </section>
+                                    <section id="autocomplete-container-ai" class="autocomplete-container"></section>
+                                </form>
+                            </section>
+                            <section class="battlerinfoai" id="battlerinfoai">
+                                <section>
+                                    <section>
+                                        <p id="battleridpokemonai" style="display: none;">id</p>
+                                        <button class="refreshbutton" id="refreshbutton" type="button"><img
+                                                src=" assets/icon/refreshicon.png"></button>
+
+                                        <p class="battlernamepokemonai" id="battlernamepokemonai"></p>
+                                        &nbsp;
+                                    </section>
+
+                                    <section>
+                                        <ul class="battlertypelistai">
+                                            <li><img class="typeicons" id="typeicon1ai">
+                                            </li>
+                                            <li><img class="typeicons" id="typeicon2ai">
+                                            </li>
+                                        </ul>
+                                    </section>
+
+                                    <section>
+                                        <img class="battlerattackimg" src="./assets/icon/attackicon2.png"
+                                            style="height: 30px; width: 30px; margin: 0;">
+                                        <p class="battlerattackpokemonai" id="battlerattackpokemonai"></p>
+                                    </section>
+
+                                    <section>
+                                        <img class="battlerdefenseimg" src="./assets/icon/defenseicon4.png"
+                                            style="height: 30px; width: 30px; margin: 0; background: none;">
+                                        <p class="battlerdefensepokemonai" id="battlerdefensepokemonai"></p>
+                                    </section>
+                                </section>
+                            </section>
+
+
+
+
+                        </section>
+
+
+                        <section id="imagesai" class="imagesai">
+                            <img id="innerpokemondisplayai" src="/assets/loading.gif" alt="Pokémon ai image" preload>
+                            <img id="trainerdisplayai" preload>
+                        </section>
+                        <section class="healthandmoves">
+                            <section class="healthcontainer">
+                                <section class="healthbar">
+                                    <p class="healthbarai"></p>
+                                </section>
+                                <section class="currenthealthsection">
+                                    <img src="./assets/icon/health.png" style="height: 30px; width: 30px; margin: 0;">
+
+                                    <p class="currenthealthai" id="currenthealthai"></p>/<p id="maxhealthai"
+                                        class="maxhealthai"></p>
+                                </section>
+                            </section>
+                            <section class="battlerlog" id="battlerlog">
+                                <section class="battlerlogtext" id="battlerlogtext">
+                                </section>
+                            </section>
+                            <section class="battlermoves" id="battlermovesai" style="display: none;">
+                                <ul class="battlermoveslistai">
+                                    <li class="battlermove1ai"></li>
+                                    <li class="battlermove2ai"></li>
+                                    <li class="battlermove3ai"></li>
+                                    <li class="battlermove4ai"></li>
+                                </ul>
+                                <section class="battlermovesinfo" id="battlermovesinfoai">
+                                    <section class="battlermoveinfo1" id="battlermoveinfo1ai">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype1ai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove1ppai"></p>/<p id="battlermove1totalppai"></p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove1powerai"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+
+                                    <section class="battlermoveinfo2">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype2ai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove2ppai"></p>/<p id="battlermove2totalppai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove2powerai"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+
+                                    <section class="battlermoveinfo3">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype3ai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove3ppai"></p>/<p id="battlermove3totalppai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove3powerai"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+
+                                    <section class="battlermoveinfo4">
+                                        <section>
+                                            <p>type:
+                                            <p id="battlermovetype4ai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>powerpoints:</p>
+                                            <p id="battlermove4ppai"></p>/<p id="battlermove4totalppai"></p>
+                                            </p>
+                                        </section>
+                                        <section>
+                                            <p>power:
+                                            <p id="battlermove4powerai"></p>
+                                            </p>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <section id="battlelogsection">
+                <section id="battlelogtextsection">
+                    <p id="battlelogtext"></p>
+                    <img id="badgeimage">
+                </section>
+
+                <section class=" battlerlogbuttonsection">
+                    <button id="playagainbutton" onclick="window.location.reload();">Opnieuw spelen</button>
+                    <button id="backtostartbutton" onclick="window.location.href = '/home';">Terug naar
+                        Start</button>
+                </section>
+            </section>
+        </main>
+        <%- include('footer.ejs') %>
+</body>
+
+</html>

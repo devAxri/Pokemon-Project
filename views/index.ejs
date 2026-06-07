@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta name="description" content="Landingpage of E-Services">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Onze Projecten - E-Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <script src="./js/index.js" defer></script>
+    <script src="./js/navhandler.js" defer></script>
+</head>
+
+<body class="landingpagebody">
+    <header>
+        <nav>
+            <a class="logo" href="/"><img src="./assets/logo.png" alt="hier komt logo te staan"></a>
+            <form class="searchform" onsubmit="preventdefault();">
+                <section class="autocomplete">
+                    <input id="searchgameinput" type="text" placeholder="een spel zoeken..." name="searchgameinput">
+                </section>
+                <section id="autocomplete-container-game" class="autocomplete-container"></section>
+
+            </form>
+            <section class="userandPokemon">
+                <button class="navloginbutton" id="navloginbutton"><a href="login">login</a></button>
+            </section>
+        </nav>
+    </header>
+
+    <main class="landingpagemain">
+        <section class="landingpagetopbackground">
+            <h1>E-Services</h1>
+            <h2>Excellentie in elke service</h2>
+        </section>
+
+        <section class="websiteinfo">
+            <p><%- activeplayers %></p>
+            <p>Laatse updates 05/2024</p>
+            <p>Nieuwe features bij Pokémon</p>
+        </section>
+        <section class="articlecontainer">
+            <a id="pokemon" href="./login">
+                <article>
+                    <img src="./assets/images/games/pokémon.jpg" alt="img Pokemon">
+                    <h4>Pokémon</h4>
+                </article>
+            </a>
+            <a id="fifa">
+                <article>
+                    <img src="./assets/images/games/fifa.jpg" alt="img Fifa">
+                    <h4>Fifa</h4>
+                </article>
+            </a>
+            <a id="fortnite">
+                <article>
+                    <img src="./assets/images/games/fortnite.jpg" alt="img Fortnite">
+                    <h4>Fortnite</h4>
+                </article>
+            </a>
+            <a id="lotr">
+                <article>
+                    <img src="./assets/images/games/lotr.jpg" alt="img LOTR">
+                    <h4>The Lord of the Rings</h4>
+                </article>
+            </a>
+            <a id="mtg">
+                <article>
+                    <img src="./assets/images/games/mtg.jpg" alt="img MTG">
+                    <h4>Magic The Gathering</h4>
+                </article>
+            </a>
+            <a id="legomasters">
+                <article>
+                    <img src="./assets/images/games/lego masters.jpg" alt="img LegoMasters">
+                    <h4>Lego Masters</h4>
+                </article>
+            </a>
+
+        </section>
+    </main>
+    <%- include('footer.ejs') %>
+</body>
+
+</html>
